@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+<form action="http://www.google.com/search">
+    <div>
+        Let's search Google:
+        <input type="text" name="q" value="batman" />
+        <input type="submit" />
+    </div>
+</form>
+<br><hr>
+<form action="submit">
+    UserName<input type="text" size="10" maxlength="8" name="user"><br>
+    <div>
+        <p>What toppings do you want on your pizza?</p>
+        <input type="checkbox" name="Pepperoni" >Pepperoni <br>
+        <input type="checkbox" name="Sausage" checked>Sausage <br>
+        <input type="checkbox" name="Chicken">Chicken <br>
+    </div>
+    
+    <input type="submit" >
+</form>
+<br><hr>
+<form action="submit">
+    <select name="favoritecharacter[]" multiple>
+        <optgroup label="Major Char">
+            <option>Jerry</option>
+            <option>George</option>
+            <option selected>Kramer</option>
+            <option>Elaine</option>
+        </optgroup>
+        <optgroup label="Minor Char">
+            <option>Newman</option>
+        </optgroup>
+        
+    </select>
+    <label for="visa"><input type="radio" name="cc" value="visa" id="visa" checked> Visa </label><br>
+     <label for="mc"><input type="radio" name="cc" value="mc" id="mc" > Master Card </label><br>
+      <label for="amex"><input type="radio" name="cc" value="amex" id="amex" > Amex </label><br>
+      <input type="hidden" name="school" value="NYIT">
+      <input type="reset">
+      <input type="submit">
+</form>
+</body>
+
+</html>

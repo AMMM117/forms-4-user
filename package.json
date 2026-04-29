@@ -1,0 +1,20 @@
+{
+  "name": "forms",
+  "version": "1.0.0",
+  "description": "Forms Project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "George M. Salayka",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

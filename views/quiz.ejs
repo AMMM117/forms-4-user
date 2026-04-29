@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+   <link rel="stylesheet" href="">
+</head>
+<body>
+    <%
+    console.log(locals.totalQuestions);
+        let questionCount = (locals.totalQuestions ?? 0);
+        let correctCount = locals.totalCorrect ?? 0;
+        let randomIndex = parseInt(Math.random()*chosenWords.length);
+        let chosenWord = chosenWords[randomIndex];
+        let [correctWord, correctPart, correctDef] = chosenWord.split('\t');
+    %>
+    <% if (locals.userWasCorrect){%>
+        <h2 id="correct">That was Correct!</h2>
+    <% } else if(questionCount >= 1){ %>
+        <h2 id="incorrect">Wrong! The correct definition was: <span id="actual"><%= locals.actualDef %></span></h2>
+    <% } %>
+    <% if (questionCount === 0) { %>
+        <h2>Let the Quiz Begin!</h2>
+    <% } else { %>
+        <h2>Score:  <%= totalCorrect %> / <%= totalQuestions %></h2>
+    <% } %>
+     <p><%= correctWord %> - <%= correctPart %></p>
+     <form action="quiz" method="post">
+        <ol>
+        <% for (currentWord of chosenWords) { 
+            let [word,part,def] = currentWord.split('\t');    
+        %>
+            <li><label><input type="radio" name="userChoice" value="<%= word %>"><%= def %></label></li>
+        <% } %>
+        </ol>
+        <input type="hidden" name="totalQuestions" value="<%= questionCount%>">
+        <input type="hidden" name="totalCorrect" value="<%= correctCount %>">
+        <input type="hidden" name="correctWord" value="<%= correctWord %>">
+        <input type="hidden" name="correctDef" value="<%= correctDef %>">
+            <input type="submit">
+     </form>
+     
+
+</body>
+</html>
