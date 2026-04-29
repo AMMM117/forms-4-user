@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New User</title>
 </head>
 <body>
+    <h1>Add New User</h1>
+
     <form action="/users" method="post">
         <label for="firstName">
             First Name:
@@ -15,6 +17,40 @@
                 value="<%= locals.firstName %>"
             >
         </label>
+
+        <br>
+
+        <label for="lastName">
+            Last Name:
+            <input 
+                type="text" 
+                name="lastName" 
+                value="<%= locals.lastName %>"
+            >
+        </label>
+
+        <br>
+
+        <label for="gender">
+            Gender:
+            <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </label>
+
+        <br>
+
+        <label for="age">
+            Age:
+            <input 
+                type="number" 
+                name="age" 
+                value="<%= locals.age %>"
+            >
+        </label>
+        <br>
         <button type="submit">Submit</button>
     </form>
 </body>
